@@ -179,3 +179,11 @@ body, input, button, select, textarea {
 .md-typeset img[src*="assets/tikz/"] {
   font-size: 1.25em;
 }
+
+.md-typeset ol > li::marker {
+  content: "(" counter(list-item) ") ";
+}
+
+.md-typeset ol.roman > li::marker {
+  content: "(" counter(list-item, lower-roman) ") ";
+}
