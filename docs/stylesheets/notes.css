@@ -177,7 +177,7 @@ body, input, button, select, textarea {
 }
 
 .md-typeset img[src*="assets/tikz/"] {
-  font-size: 1.25em;
+  font-size: 1em;
 }
 
 :root {
@@ -221,4 +221,37 @@ body,
 .md-typeset ol > li {
   padding-left: 0.15em;
   margin-bottom: 0.25em;
+}
+
+/* Space before and around Roman lists */
+.md-typeset p:has(+ .roman) {
+  margin-bottom: 0.2em !important;
+}
+
+.md-typeset .roman,
+.md-typeset .roman > ol {
+  margin-top: 0.2em !important;
+  margin-bottom: 0.2em !important;
+}
+
+/* Space around display equations */
+.md-typeset div.arithmatex {
+  margin-top: 0.35em !important;
+  margin-bottom: 0.35em !important;
+}
+
+.md-typeset mjx-container[display="true"] {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Paragraphs immediately beside display equations */
+.md-typeset p:has(+ div.arithmatex) {
+  margin-bottom: 0.25em !important;
+}
+
+.md-typeset div.arithmatex + p {
+  margin-top: 0.25em !important;
 }
