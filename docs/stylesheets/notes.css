@@ -236,8 +236,8 @@ body,
 
 /* Space around display equations */
 .md-typeset div.arithmatex {
-  margin-top: 0.35em !important;
-  margin-bottom: 0.35em !important;
+  margin-top: 0.75em !important;
+  margin-bottom: 0.75em !important;
 }
 
 .md-typeset mjx-container[display="true"] {
