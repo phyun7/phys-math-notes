@@ -50,3 +50,40 @@ mjx-container[display="true"] {overflow-x:auto;overflow-y:hidden;padding:.2rem 0
 .md-typeset h1 {font-size:2rem;color:#222;}
 @media(min-width:76.25em){.md-sidebar--primary:not([hidden])~.md-content {max-width:43rem;}}
 @media(max-width:76.234375em){.md-sidebar--primary {width:12.1rem;}}
+
+
+/* Black boxes with white backgrounds */
+.md-typeset .admonition,
+.md-typeset details {
+  border: 1px solid #000 !important;
+  border-radius: 0;
+  background: #fff;
+  color: #000;
+  box-shadow: none;
+  font-size: inherit;
+}
+
+/* White title backgrounds */
+.md-typeset .admonition > .admonition-title,
+.md-typeset details > summary {
+  background: #fff !important;
+  color: #000 !important;
+  padding-inline-start: 0.6rem !important;
+}
+
+/* Remove the pencil/type icon */
+.md-typeset .admonition > .admonition-title::before,
+.md-typeset details > summary::before {
+  display: none;
+}
+
+/* Keep the folding arrow, colored black */
+.md-typeset details > summary::after {
+  background-color: #000 !important;
+}
+
+/* Extra-thin borders for proof boxes */
+.md-typeset .admonition.proof,
+.md-typeset details.proof {
+  border-width: 0.5px !important;
+}
