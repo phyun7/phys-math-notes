@@ -175,3 +175,7 @@ body, input, button, select, textarea {
 .md-typeset details > summary::-webkit-details-marker {
   display: none;
 }
+
+.md-typeset img[src*="assets/tikz/"] {
+  font-size: 1.25em;
+}
