@@ -1,24 +1,24 @@
-/* A quiet reading room: white paper, Times New Roman, and blue links. */
-:root { --md-text-font:"Times New Roman", Times, serif; --md-code-font:"SFMono-Regular", Consolas, monospace; --md-primary-fg-color:#ffffff; --md-primary-bg-color:#202a35; --md-accent-fg-color:#235c85; --md-default-fg-color:#242c33; --md-default-bg-color:#ffffff; --md-typeset-a-color:#235c85; }
+/* A quiet reading room: white paper, sans-serif typography, and blue links. */
+:root { --md-text-font:Arial, Helvetica, sans-serif; --md-code-font:"SFMono-Regular", Consolas, monospace; --md-primary-fg-color:#ffffff; --md-primary-bg-color:#202a35; --md-accent-fg-color:#235c85; --md-default-fg-color:#242c33; --md-default-bg-color:#ffffff; --md-typeset-a-color:#235c85; }
 html { scroll-behavior:smooth; }
 body {background:#ffffff;}
 .md-grid {max-width:61rem;}
 .md-header {box-shadow:none;border-top:4px solid #233d52;border-bottom:1px solid #deded7; background:#ffffff;color:#273849;}
 .md-header__inner {height:4rem;}
-.md-header__title {font-family:"Times New Roman",Times,serif;font-size:1.13rem;font-weight:400;letter-spacing:-.025em;}
+.md-header__title {font-family:Arial, Helvetica, sans-serif;font-size:1.13rem;font-weight:400;letter-spacing:-.025em;}
 .md-header__button.md-logo {display:none;}
 .md-search__form {background:#ffffff;border:1px solid #deded7;border-radius:3px;color:#263b4b;}
 .md-search__input::placeholder {color:#68737a;}
 .md-main__inner {margin-top:2rem;}
 .md-typeset {font-size:.85rem;line-height:1.85;}
-.md-typeset h1,.md-typeset h2,.md-typeset h3 {font-family:"Times New Roman",Times,serif;letter-spacing:-.025em;color:#273849;}
+.md-typeset h1,.md-typeset h2,.md-typeset h3 {font-family:Arial, Helvetica, sans-serif;letter-spacing:-.025em;color:#273849;}
 .md-typeset h1 {font-size:1.9rem;line-height:1.25;font-weight:400;margin-bottom:1.1rem;}
 .md-typeset h2 {font-size:1.28rem;font-weight:400;margin-top:2rem;}
 .md-typeset h3 {font-size:1.05rem;}
 .md-typeset a:hover {text-decoration:underline;}
 .md-content {max-width:43rem;margin-inline:auto;}
 .md-content__inner {margin:0 1.5rem 2rem;}
-.md-sidebar {font-family:"Times New Roman",Times,serif;font-size:.62rem;}
+.md-sidebar {font-family:Arial, Helvetica, sans-serif;font-size:.62rem;}
 .md-sidebar--primary {width:10.5rem;}
 .md-sidebar--secondary {width:10rem;}
 .md-nav__title {box-shadow:none;background:transparent;}
@@ -30,7 +30,7 @@ body {background:#ffffff;}
 .md-typeset table:not([class]) {font-size:.7rem;background:transparent;box-shadow:none;}
 .md-footer {background:transparent;color:#61717b;border-top:1px solid #deded7;}
 .md-footer-meta {background:transparent;}
-.md-copyright {color:#6b767c;font-family:"Times New Roman",Times,serif;}
+.md-copyright {color:#6b767c;font-family:Arial, Helvetica, sans-serif;}
 .md-copyright__highlight {color:#536875;}
 mjx-container[display="true"] {overflow-x:auto;overflow-y:hidden;padding:.2rem 0;}
 @media(min-width:76.25em){.md-sidebar--primary:not([hidden])~.md-content{max-width:37rem;}}
@@ -51,39 +51,46 @@ mjx-container[display="true"] {overflow-x:auto;overflow-y:hidden;padding:.2rem 0
 @media(min-width:76.25em){.md-sidebar--primary:not([hidden])~.md-content {max-width:43rem;}}
 @media(max-width:76.234375em){.md-sidebar--primary {width:12.1rem;}}
 
+/* Sans-serif prose. MathJax retains its own math fonts. */
+:root {
+  --md-text-font: Arial, Helvetica, sans-serif;
+  --md-text-font-family: Arial, Helvetica, sans-serif;
+}
+body, input, button, select, textarea {
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-/* Black boxes with white backgrounds */
+/* Theorems, lemmas and propositions: pale blue, rounded, no border. */
 .md-typeset .admonition,
 .md-typeset details {
-  border: 1px solid #000 !important;
-  border-radius: 0;
-  background: #fff;
-  color: #000;
-  box-shadow: none;
+  --note-fill: #eef2ff;
+  border: none !important;
+  border-radius: 10px !important;
+  background: var(--note-fill) !important;
+  color: #202632;
+  box-shadow: none !important;
+  padding: 0.65rem 0.9rem !important;
+  margin: 1rem 0;
   font-size: inherit;
+  overflow: hidden;
 }
 
-/* White title backgrounds */
+/* Examples: green. Definitions: sky blue. */
+.md-typeset .admonition.example,
+.md-typeset details.example {
+  --note-fill: #edf7ee;
+}
+.md-typeset .admonition.definition,
+.md-typeset details.definition {
+  --note-fill: #e9f6fc;
+}
+
+/* Compact titles with no colored stripe or pencil/type icon. */
 .md-typeset .admonition > .admonition-title,
 .md-typeset details > summary {
-  background: #fff !important;
-  color: #000 !important;
-  padding-inline-start: 0.6rem !important;
-}
-
-/* Remove the pencil/type icon */
-.md-typeset .admonition > .admonition-title::before,
-.md-typeset details > summary::before {
-  display: none;
-}
-
-/* Keep the folding arrow, colored black */
-.md-typeset details > summary::after {
-  background-color: #000 !important;
-}
-
-/* Extra-thin borders for proof boxes */
-.md-typeset .admonition.proof,
-.md-typeset details.proof {
-  border-width: 0.5px !important;
-}
+  background: transparent !important;
+  color: inherit !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 0 0.2rem !important;
