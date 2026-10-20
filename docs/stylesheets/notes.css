@@ -198,6 +198,15 @@ body,
   font-family: "Times New Roman", Times, serif;
 }
 
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  font-weight: 700 !important;
+}
+
 /* Ordinary lists: (1), (2), (3) */
 .md-typeset ol > li::marker {
   content: "(" counter(list-item, decimal) ") ";
