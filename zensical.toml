@@ -5,14 +5,29 @@ site_url = "https://example.github.io/"
 site_dir = "dist"
 extra_css = ["stylesheets/notes.css"]
 extra_javascript = ["javascripts/mathjax.js", "https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js", "javascripts/notes.js"]
-nav = [{"Journal" = "index.md"}, {"By subject" = "subjects.md"}, {"Statement index" = "statements.md"}, {"About" = "about.md"}]
+nav = [
+  { "Introduction" = "index.md" },
+  { "Foundations" = [
+    { "Category Theory" = [
+      { "Introduction" = "foundations/category-theory/index.md" },
+      { "Chapter 1" = [
+        "foundations/category-theory/chapter-1/index.md",
+        { "Section 1" = "foundations/category-theory/chapter-1/section-1.md" },
+      ] },
+    ] },
+  ] },
+  { "Geometry" = "geometry/index.md" },
+  { "Topology" = "topology/index.md" },
+  { "Statement index" = "statements.md" },
+  { "About" = "about.md" },
+]
 copyright = "Mathematical Notes"
 
 [project.theme]
 variant = "classic"
 custom_dir = "overrides"
 font = false
-features = ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.suggest", "search.highlight"]
+features = ["navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "toc.follow"]
 
 [project.theme.palette]
 scheme = "default"
@@ -20,14 +35,6 @@ primary = "white"
 accent = "indigo"
 
 [project.plugins.search]
-[project.plugins.blog]
-blog_dir = "."
-post_url_format = "{date}/{slug}"
-post_excerpt = "required"
-post_readtime = false
-archive_date_format = "yyyy"
-archive_url_format = "archive/{date}"
-
 [project.markdown_extensions]
 attr_list = {}
 md_in_html = {}
