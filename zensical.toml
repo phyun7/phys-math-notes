@@ -33,6 +33,9 @@ accent = "indigo"
 attr_list = {}
 md_in_html = {}
 footnotes = {}
+admonition = {}
+pymdownx.details = {}
+pymdownx.superfences = {}
 [project.markdown_extensions.toc]
 permalink = "¶"
 [project.markdown_extensions.pymdownx.arithmatex]
