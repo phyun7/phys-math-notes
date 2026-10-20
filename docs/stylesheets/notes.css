@@ -187,3 +187,21 @@ body, input, button, select, textarea {
 .md-typeset ol.roman > li::marker {
   content: "(" counter(list-item, lower-roman) ") ";
 }
+
+:root {
+  --md-text-font: "Times New Roman", Times, serif;
+}
+
+body,
+.md-typeset,
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6,
+.md-header__title,
+.md-sidebar,
+.md-copyright {
+  font-family: "Times New Roman", Times, serif;
+}
