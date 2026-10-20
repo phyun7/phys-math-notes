@@ -180,14 +180,6 @@ body, input, button, select, textarea {
   font-size: 1.25em;
 }
 
-.md-typeset ol > li::marker {
-  content: "(" counter(list-item) ") ";
-}
-
-.md-typeset ol.roman > li::marker {
-  content: "(" counter(list-item, lower-roman) ") ";
-}
-
 :root {
   --md-text-font: "Times New Roman", Times, serif;
 }
@@ -204,4 +196,20 @@ body,
 .md-sidebar,
 .md-copyright {
   font-family: "Times New Roman", Times, serif;
+}
+
+/* Ordinary lists: (1), (2), (3) */
+.md-typeset ol > li::marker {
+  content: "(" counter(list-item, decimal) ") ";
+}
+
+/* Roman lists: (i), (ii), (iii) */
+.md-typeset .roman > ol > li::marker {
+  content: "(" counter(list-item, lower-roman) ") ";
+}
+
+/* Compact list spacing */
+.md-typeset ol > li {
+  padding-left: 0.15em;
+  margin-bottom: 0.25em;
 }
