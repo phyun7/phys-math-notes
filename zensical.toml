@@ -6,6 +6,7 @@ site_dir = "dist"
 extra_css = ["stylesheets/notes.css"]
 extra_javascript = ["javascripts/mathjax.js", "https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js", "javascripts/notes.js"]
 nav = [
+  { "Introduction" = "intro.md"},
   { "Differential Geometry" = [
     { "1. Connections and Curvature" = [
       { "Introduction" = "diff-geo/1/index.md" },
