@@ -6,20 +6,14 @@ site_dir = "dist"
 extra_css = ["stylesheets/notes.css"]
 extra_javascript = ["javascripts/mathjax.js", "https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js", "javascripts/notes.js"]
 nav = [
-  { "Introduction" = "index.md" },
-  { "Foundations" = [
-    { "Category Theory" = [
-      { "Introduction" = "foundations/category-theory/index.md" },
-      { "Chapter 1" = [
-        "foundations/category-theory/chapter-1/index.md",
-        { "Section 1" = "foundations/category-theory/chapter-1/section-1.md" },
+  { "Differential Geometry" = [
+    { "1. Connections and Curvature" = [
+      { "Introduction" = "diff-geo/1/index.md" },
+      { "1.1. Connections" = [
+        "diff-geo/1/1/index.md",
       ] },
     ] },
   ] },
-  { "Geometry" = "geometry/index.md" },
-  { "Topology" = "topology/index.md" },
-  { "Statement index" = "statements.md" },
-  { "About" = "about.md" },
 ]
 copyright = "Mathematical Notes"
 
