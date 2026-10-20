@@ -94,3 +94,84 @@ body, input, button, select, textarea {
   border-radius: 0 !important;
   padding: 0 !important;
   margin: 0 0 0.2rem !important;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.md-typeset .admonition > .admonition-title::before,
+.md-typeset details > summary::before {
+  display: none !important;
+}
+
+/* Tighten the space between the title and the first paragraph. */
+.md-typeset .admonition > .admonition-title + *,
+.md-typeset details > summary + * {
+  margin-top: 0.2rem !important;
+}
+.md-typeset .admonition > p:not(.admonition-title),
+.md-typeset details > p {
+  margin-bottom: 0.4rem;
+}
+.md-typeset .admonition > :last-child,
+.md-typeset details > :last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Proofs: borderless white with a compact, clickable summary. */
+.md-typeset .admonition.proof,
+.md-typeset details.proof {
+  --note-fill: #ffffff;
+  padding: 0.35rem 0.9rem !important;
+}
+.md-typeset details > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  min-height: 1.2rem;
+  cursor: pointer;
+  list-style: none;
+}
+.md-typeset details.proof > summary {
+  color: #465468 !important;
+  text-decoration: underline dotted;
+  text-underline-offset: 0.2em;
+}
+.md-typeset details.proof > summary:hover {
+  color: #111111 !important;
+  text-decoration-style: solid;
+}
+.md-typeset details > summary:focus-visible {
+  outline: 2px solid #235c85;
+  outline-offset: 4px;
+  border-radius: 3px !important;
+}
+
+/* Clear open/closed arrows; preserve keyboard/native details behavior. */
+.md-typeset details > summary::after {
+  content: "▸" !important;
+  position: static !important;
+  top: auto !important;
+  right: auto !important;
+  left: auto !important;
+  display: inline-block;
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  background: none !important;
+  -webkit-mask: none !important;
+  mask: none !important;
+  color: #465468 !important;
+  transform: none !important;
+  transition: none;
+}
+.md-typeset details[open] > summary::after {
+  content: "▾" !important;
+  transform: none !important;
+}
+.md-typeset details:not([open]) > summary {
+  margin-bottom: 0 !important;
+}
+.md-typeset details > summary::marker,
+.md-typeset details > summary::-webkit-details-marker {
+  display: none;
+}
