@@ -22,26 +22,33 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
+          cache: pip
       - run: pip install -r requirements.txt
-
+      - name: Restore compiled diagrams
+        uses: actions/cache@v4
+        with:
+          path: .cache/tikz
+          key: ${{ runner.os }}-tikz-v1-${{ hashFiles('scripts/render_tikz.py', 'scripts/tikz-preamble.tex', 'docs/**/*.md') }}
+          restore-keys: |
+            ${{ runner.os }}-tikz-v1-
+      - name: Install diagram compiler
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends texlive-latex-extra texlive-pictures texlive-fonts-recommended poppler-utils
+      - name: Compile diagrams
+        run: python scripts/render_tikz.py
       - uses: actions/configure-pages@v5
         id: pages
-
-      - name: Set website address
+      - name: Set GitHub Pages URL
         env:
           PAGES_URL: ${{ steps.pages.outputs.base_url }}
         run: python scripts/set_site_url.py "$PAGES_URL/"
-
       - run: zensical build --clean
-
       - uses: actions/upload-pages-artifact@v4
         with:
           path: dist
-
       - uses: actions/deploy-pages@v4
         id: deployment
