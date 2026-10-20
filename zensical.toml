@@ -10,7 +10,7 @@ nav = [
     { "1. Connections and Curvature" = [
       { "Introduction" = "diff-geo/1/index.md" },
       { "1.1. Connections" = [
-        "diff-geo/1/1/index.md",
+        "diff-geo/1/1.md",
       ] },
     ] },
   ] },
