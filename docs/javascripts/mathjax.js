@@ -838,7 +838,7 @@ window.MathJax = {
         "\\boldsymbol{#1}",
         1
       ],
-      "fakebold": "fakebold": [
+      "fakebold": [
         "\\style{text-shadow: -0.18pt 0 currentColor, 0.18pt 0 currentColor;}{#1}",
         1
       ],
