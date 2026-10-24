@@ -837,6 +837,10 @@ window.MathJax = {
       "bm": [
         "\\boldsymbol{#1}",
         1
+      ],
+      "fakebold": [
+        "\\mathrlap{\\kern-0.18pt #1}\\mathrlap{\\kern0.18pt #1}#1",
+        1
       ]
     }
   },
