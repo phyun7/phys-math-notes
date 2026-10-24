@@ -52,6 +52,7 @@ window.MathJax = {
     ]
   },
   "tex": {
+    "tagIndent": "0em",
     "inlineMath": [
       [
         "\\(",
