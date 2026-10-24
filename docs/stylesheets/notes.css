@@ -260,3 +260,8 @@ body,
   float: right;
   margin-left: 1em;
 }
+
+.md-typeset .proof div.arithmatex > mjx-container[display="true"] {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
