@@ -264,3 +264,10 @@ body,
   font-style: normal;
   font-weight: normal;
 }
+
+.md-typeset details.proof:not(.manual-qed)::after,
+.md-typeset .admonition.proof:not(.manual-qed)::after,
+.md-typeset details.proof:not(.manual-qed) > p:last-child::after,
+.md-typeset .admonition.proof:not(.manual-qed) > p:last-child::after {
+  font-size: 1.4em;
+}
