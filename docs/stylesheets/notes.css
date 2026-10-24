@@ -255,3 +255,12 @@ body,
 .md-typeset div.arithmatex + p {
   margin-top: 0.25em !important;
 }
+
+.md-typeset details.proof:not(.manual-qed) > p:last-child::after,
+.md-typeset .admonition.proof:not(.manual-qed) > p:last-child::after {
+  content: "□";
+  float: right;
+  margin-left: 1em;
+  font-style: normal;
+  font-weight: normal;
+}
