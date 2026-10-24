@@ -256,18 +256,7 @@ body,
   margin-top: 0.25em !important;
 }
 
-.md-typeset details.proof:not(.manual-qed) > p:last-child::after,
-.md-typeset .admonition.proof:not(.manual-qed) > p:last-child::after {
-  content: "□";
+.md-typeset .proof-qed {
   float: right;
   margin-left: 1em;
-  font-style: normal;
-  font-weight: normal;
-}
-
-.md-typeset details.proof:not(.manual-qed)::after,
-.md-typeset .admonition.proof:not(.manual-qed)::after,
-.md-typeset details.proof:not(.manual-qed) > p:last-child::after,
-.md-typeset .admonition.proof:not(.manual-qed) > p:last-child::after {
-  font-size: 1.4em;
 }
